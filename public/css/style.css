@@ -1,7 +1,8 @@
-h1{
-    color: red;
-}
-.completed{
-    color: gray;
-    text-decoration: line-through;
-}
+/*  */
+h1{ /* Selector that selects all h1's in document */
+    color: red; /* defines color of the h1 text as red */
+} /* closes the h1 selector */
+.completed{ /* class selector for all elements with a class of completed */
+    color: gray; /* changes the color of text to gray when the class of completed is used for the element */
+    text-decoration: line-through; /* modifies the text to be 'strike through' */
+} /* Close our selector */

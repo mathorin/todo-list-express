@@ -1,47 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<!DOCTYPE html><!-- Identify document for browser to render-->
+<html lang="en"><!-- Set language for browser to know and start html tag-->
+<head><!-- Organization of meta data, this is start of it-->
+    <meta charset="UTF-8"><!-- Define the character encoding type being used-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Sets compatability for MS browsers-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Defines the view and visible area which eliminates side scrolling-->
+    <title>Document</title> <!-- Sets the name which is also seen in the browser/tab-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Link to the css style sheet, a standard one by font-awesome-->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to local css stylesheet-->
+</head> <!-- Close the head section-->
+<body> <!-- main section for displaying content-->
+    <!DOCTYPE html> <!-- Duplicate head / unnecessary-->
+<html lang="en"> <!-- Duplicate head / unnecessary-->
+<head> <!-- Duplicate head / unnecessary-->
+    <meta charset="UTF-8"> <!-- Duplicate head / unnecessary-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Duplicate head / unnecessary-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Duplicate head / unnecessary-->
+    <title>Document</title><!-- Duplicate head / unnecessary-->
+</head><!-- Duplicate head / unnecessary-->
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Todo List: </h1>
-    <ul class="todoItems">
-    <% for(let i=0; i < items.length; i++) {%>
-        <li class="item">
-            <% if(items[i].completed === true) {%>
-                <span class='completed'><%= items[i].thing %></span>
-            <% }else{ %>
-                <span><%= items[i].thing %></span>
-            <% } %>    
-            <span class='fa fa-trash'></span>
-        </li>
-    <% } %>
-    </ul>
+    <h1>Todo List: </h1> <!-- Primary heading of the page -->
+    <ul class="todoItems"> <!-- Create unordered list with class of todoItems-->
+    <% for(let i=0; i < items.length; i++) {%> <!-- JS for loop -->
+        <li class="item"> <!-- Creates a list item with class of "item"-->
+            <% if(items[i].completed === true) {%> <!-- conditional check if items are completed in the array -->
+                <span class='completed'><%= items[i].thing %></span> <!-- create an inline element span with a class of completed, the content uses EJS to display the name of the task -->
+            <% }else{ %> <!-- if it isn't completed then do... -->
+                <span><%= items[i].thing %></span> <!-- places an item from the array, without the completed class -->
+            <% } %>    <!-- EJS closing if/else statement -->
+            <span class='fa fa-trash'></span> <!-- no text in this span, it creates a trash can using font awesome-->
+        </li> <!-- End of the list item -->
+    <% } %> <!-- EJS end of for loop -->
+    </ul> <!-- End of unordered list -->
 
-    <h2>Left to do: <%= left %></h2>
+    <h2>Left to do: <%= left %></h2> <!-- Create a second level heading and use a variable in EJS to display # of tasks left to complete -->
 
-    <h2>Add A Todo:</h2>
+    <h2>Add A Todo:</h2> <!-- Create another h2 heading -->
 
-    <form action="/addTodo" method="POST">
-        <input type="text" placeholder="Thing To Do" name="todoItem">
-        <input type="submit">
-    </form>
+    <form action="/addTodo" method="POST"> <!-- Creating a form with POST method that uses the /addTodo route, route i show the server knows what to do-->
+        <input type="text" placeholder="Thing To Do" name="todoItem"> <!-- Create an input box for text with default text and naming the input box for accessing it later-->
+        <input type="submit"> <!-- define the type of input which creates the submit button and packages the data being submitted -->
+    </form> <!-- closing the form tag -->
     
 
-    <script src='js/main.js'></script>
+    <script src='js/main.js'></script> <!-- Link to the JS folder and main.js file within it for other behavior-->
 </body>
 </html>
